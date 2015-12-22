@@ -1,0 +1,19 @@
+<ion-view view-title="Infinity">
+  <!-- Add a nav button to the primary location -->
+  <ion-nav-buttons side="primary">
+    <button class="button button-clear" ng-click="state.reorder = !state.reorder">Sort</button>
+  </ion-nav-buttons>
+
+  <!-- ionContent is used to wrap scrollable content -->
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="load in infinity.loads track by $index">
+
+        <div>{{load.title}}</div>
+
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="infinity.getLoadsSegment(10)" distance="5%"></ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>
